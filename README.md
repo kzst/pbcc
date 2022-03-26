@@ -1,8 +1,10 @@
-# Risk-based Control Charts
+# Percentile-based Control Charts
 
 This package provides percentile-based quality control tools for economic design statistical process control. 
 
-* Risk-based Multivariate control charts.
+* Percentile-based Xbar control chart
+* Percentile-based S2 control chart
+* Percentile-based joint Xbar and S2 control chart
 
 #### Author
 
