@@ -1,0 +1,14 @@
+citHeader("To cite pbcc in publications use:")
+citEntry(
+    entry      = "article",
+    title        = "pbcc: an R package for percentile-based control chart",
+    author       = personList(person(given="Aamir", family="Saghir"), person(given="Zsolt T.", family="Kosztyan", email="kzst@gtk.uni-pannon.hu")),
+    journal      = "Journal of Statistical Softwares",
+    year         = 2022,
+    pages        = "Submitted",
+    volume       = "",
+    url          = "https://github.com/kzst/pbcc/",
+    textVersion  =
+    paste("Saghir, Kosztyan (2022).",
+          "pbcc: an R package for Percentile-based Control Chart")
+)

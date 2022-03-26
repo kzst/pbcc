@@ -1,0 +1,25 @@
+Package: pbcc
+Type: Package
+Title: Percentile-based Control Chart
+Version: 0.0.1
+Author: c(
+    person("Aamir", "Sagir", role = "aut"),
+    person("Zsolt","Tibor","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
+    )
+Maintainer: Zsolt T. Kosztyan <kzst@gtk.uni-pannon.hu>
+Description: Percentile-based Multivariate Control Charts for continuous, attribute and count data.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/kzst/pbcc
+Depends: 
+    R (>= 3.10)
+Imports: 
+    rgenoud,
+    stats
+Collate:
+    'pbs2.R'
+    'pbxbar.R'
+    'pbxbars2.R'
+    'summary.pbcc.R'
+RoxygenNote: 7.1.2
