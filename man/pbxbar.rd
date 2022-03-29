@@ -8,8 +8,8 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-pbxbar(nmax, T1, T2, hv, mat,
-p1=0.05,p2=0.05, delta=1.5, d=2.0, pop.size=1000, sided="two")
+pbxbar(nmax, T1, T2, hv, mat, p1=0.05,
+p2=0.05, delta=1.5, d=2.0, pop.size=1000, sided="two")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,7 +17,7 @@ p1=0.05,p2=0.05, delta=1.5, d=2.0, pop.size=1000, sided="two")
   \item{T1}{ The desired in-control time to signal (a numeric value).}
 \item{T2}{ The desired out-of-control time to signal (a numeric value).}
 \item{hv}{ The vector of intersample interval upto maximum T2 (a numeric vector of possible sample intervals).}
-\item{mat}{ The matrix of minimum and maximum bounds for optimum parameters sample size and sample interval. The minimum values of n and h are (2,0.5) and maximum value are (nmax, T2).}
+\item{mat}{ The matrix of minimum and maximum bounds for optimum parameters sample size and intersampling interval. The minimum values of n and h are (2,0.5) and maximum value are (nmax, T2).}
   \item{p1}{The probability to signal in-control from a specified number (default value is 5\%)}
  \item{p2}{The probability to signal out-of-control from a specified number (default value is 5\%)}
 \item{delta}{ The expected shift size in the process variance (default value is 1.5). When the process is in-control w.r.t process variation, set delta=1.}
@@ -28,9 +28,9 @@ detecting a positive shift, and vice versa (default is "two").}
 }
 
 \value{
- \item{k}{ The optimal control chart constant for designing of percentile-based xbar control chart.}
- \item{n }{The optimal sample size for designing of percentile-based xbar control chart.}
- \item{h }{The optimal sampling interval for designing of percentile-based xbar control chart.}
+ \item{k}{ The optimal control chart constant to design the percentile-based xbar control chart.}
+ \item{n }{The optimal sample size to design the percentile-based xbar control chart.}
+ \item{k }{The optimal sampling interval to design the percentile-based xbar control chart.}
   \item{Fval }{The optimal function value return by genetic algorithem ("rgenoud"" object).}
 
 %%  \item{comp2 }{Description of 'comp2'}
@@ -50,10 +50,34 @@ e-mail: kzst@gtk.uni-pannon.hu
 \seealso{\code{\link{pbxbars2}}, \code{\link{pbs2}}, \code{\link{summary}}.}
 
 \examples{
+# Calculation of optimal parameters of the percentile-based Xbar control chart
+# using pbcc package.
 
-nmax=10; T1=100; T2=1
+
+# Set the possible sample size in each h units of time is up to 10.
+
+nmax=10
+
+# Set the process in-control time to signal is at least 100 samples.
+
+T1=100
+
+# Set the control chart time to signal is at most 2 samples when shift occur in the process mean.
+
+T2=2
+
+# Set the sampling intersample intervals to 0.5(0.5) T2 units of time.
+
 hv=seq(0.5, T2, by=0.5)
+
+# Set the lower and upper bounds of parameters (n and h values) which "genoud" will used
+# in the optimization.
+# The columns contains the parameters and the rows reprents lower and upper bound of each parameter.
+
 mat=matrix(c(2, nmax, 1, length(hv)), 2,2, byrow=TRUE)
+
+# Calculation of optimal parameters of the percentile-based Xbar control chart
+
 pbxbar(nmax, T1, T2, hv, mat)
 
 }
@@ -63,6 +87,6 @@ pbxbar(nmax, T1, T2, hv, mat)
 % \keyword{ ~kwd2 }
 % Use only one keyword per line.
 % For non-standard keywords, use \concept instead of \keyword:
-% \concept{ ~cpt1 }
+\concept{control chart}
 % \concept{ ~cpt2 }
 % Use only one concept per line.

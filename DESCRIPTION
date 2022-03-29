@@ -1,7 +1,7 @@
 Package: pbcc
 Type: Package
 Title: Percentile-based Control Chart
-Version: 0.0.1
+Version: 0.0.2
 Author: c(
     person("Aamir", "Sagir", role = "aut"),
     person("Zsolt","Tibor","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
@@ -22,4 +22,4 @@ Collate:
     'pbxbar.R'
     'pbxbars2.R'
     'summary.pbcc.R'
-RoxygenNote: 7.1.2
+RoxygenNote: 7.1.1

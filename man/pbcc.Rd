@@ -4,7 +4,7 @@
 
 \title{Package of Percentile-based Control Charts}
 
-\description{Calculate the optimal parmeters n (sample size), h (sampling inetrval) and l (percentile of chi-square distribution) for Statistcal Design of Percentile-based control charts.
+\description{Calculate the optimal parmeters n (sample size), h (sampling inetrval), k (number of s.d from control limits to center line) and l (percentile of the sample variance  distribution) for Statistcal Design of Percentile-based control charts.
 }
 
 \seealso{\code{\link{pbs2}}, \code{\link{pbxbar}}, \code{\link{pbxbars2}}, \code{\link{summary.pbcc}}.}
