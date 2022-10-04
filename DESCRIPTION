@@ -1,26 +1,20 @@
 Package: pbcc
 Type: Package
-Title: Percentile-based Control Chart
+Title: 'Percentile-based Control Chart'
 Version: 0.0.3
-Author: c(
-    person("Aamir", "Sagir", role = "aut"),
-    person("Zsolt","Tibor","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
+Authors@R: c(
+    person("Aamir", "Saghir", role = "aut"),
+    person("Zsolt T.","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
     )
 Maintainer: Zsolt T. Kosztyan <kzst@gtk.uni-pannon.hu>
-Description: Percentile-based Shewharts Control Charts for continuous data.
+Description: Design and implementation of Percentile-based Shewharts Control Charts for continuous data. Faraz A, Saniga E, Montgomery D (2019) <doi/abs/10.1002/qre.2384>.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/kzst/pbcc
 Depends: 
     R (>= 3.10)
-Imports: 
-    rgenoud,
-    ggplot2,
-    stats,
-    qcc,	
-    grDevices,
-    ggpubr
+Imports:  rgenoud, ggplot2, stats, qcc, grDevices, ggpubr
 Collate:
     'odpbc.R'
     'pbcc.R'
