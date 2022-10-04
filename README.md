@@ -2,9 +2,9 @@
 
 This package provides percentile-based quality control tools for economic design statistical process control. 
 
-* Percentile-based Xbar control chart
-* Percentile-based S2 control chart
-* Percentile-based joint Xbar and S2 control chart
+* Percentile-based individual Shewhart control charts
+* Percentile-based joint Shewhart control charts
+* Optimal Design Parameters of Percentile-based individual/joint Shewhart control charts
 
 #### Author
 

@@ -1,13 +1,13 @@
 Package: pbcc
 Type: Package
 Title: Percentile-based Control Chart
-Version: 0.0.2
+Version: 0.0.3
 Author: c(
     person("Aamir", "Sagir", role = "aut"),
     person("Zsolt","Tibor","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
     )
 Maintainer: Zsolt T. Kosztyan <kzst@gtk.uni-pannon.hu>
-Description: Percentile-based Multivariate Control Charts for continuous, attribute and count data.
+Description: Percentile-based Shewharts Control Charts for continuous data.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
@@ -16,10 +16,14 @@ Depends:
     R (>= 3.10)
 Imports: 
     rgenoud,
-    stats
+    ggplot2,
+    stats,
+    qcc,	
+    grDevices,
+    ggpubr
 Collate:
-    'pbs2.R'
-    'pbxbar.R'
-    'pbxbars2.R'
+    'odpbc.R'
+    'pbcc.R'
+    'plot.pbcc.R'
     'summary.pbcc.R'
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
