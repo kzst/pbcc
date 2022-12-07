@@ -1,8 +1,8 @@
 #-----------------------------------------------------------------------------#
 #                                                                             #
-#  RISK-BASED MULTIVARIATE CONTROL CHARTS                                     #
+#  PERCENTILE-BASED CONTROL CHARTS                                            #
 #                                                                             #
-#  Written by: Aamir Saghir, Attila I. Katona, Zsolt T. Kosztyan              #
+#  Written by: Aamir Saghir, Zsolt T. Kosztyan                                #
 #              Department of Quantitative Methods                             #
 #              University of Pannonia, Hungary                                #
 #              kzst@gtk.uni-pannon.hu                                         #
@@ -110,3 +110,5 @@ plot.pbcc <- function(x, title,...){
       plot(x,...)
     }
 }
+
+

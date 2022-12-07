@@ -1,13 +1,13 @@
 Package: pbcc
 Type: Package
-Title: 'Percentile-based Control Chart'
+Title: Percentile-Based Control Chart
 Version: 0.0.3
 Authors@R: c(
     person("Aamir", "Saghir", role = "aut"),
     person("Zsolt T.","Kosztyan",email="kzst@gtk.uni-pannon.hu", role = c("aut", "cre"))
     )
 Maintainer: Zsolt T. Kosztyan <kzst@gtk.uni-pannon.hu>
-Description: Design and implementation of Percentile-based Shewharts Control Charts for continuous data. Faraz A, Saniga E, Montgomery D (2019) <doi/abs/10.1002/qre.2384>.
+Description: Design and implementation of Percentile-based Shewhart Control Charts for continuous data. Faraz (2019) <doi:10.1002/qre.2384>.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true

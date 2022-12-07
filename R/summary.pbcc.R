@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------------------#
 #                                                                             #
-#  RISK-BASED MULTIVARIATE CONTROL CHARTS                                     #
+#  PERCENTILE-BASED CONTROL CHARTS                                            #
 #                                                                             #
 #  Written by: Aamir Saghir, Zsolt T. Kosztyan                                #
 #              Department of Quantitative Methods                             #

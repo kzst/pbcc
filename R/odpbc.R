@@ -1,11 +1,11 @@
 #-----------------------------------------------------------------------------#
 #                                                                             #
-#         PERECNTILE-BASED CONTROL CHARTS                                     #
+#         PERCENTILE-BASED CONTROL CHARTS                                     #
 #                                                                             #
 #  Written by: Aamir Saghir, Zsolt T. Kosztyan                                #
 #              Department of Quantitative Methods                             #
 #              University of Pannonia, Hungary                                #
-#              kzst@gtk.uni-pannon.hu                                         #
+#              kzst@gtk.uni-pannon.hu.                                        #
 #                                                                             #
 # Last modified: October 2022                                                 #
 #-----------------------------------------------------------------------------#
@@ -54,7 +54,7 @@ if ("Xbar" %in%type)
       K<- ((Fval <-1)*1)*k
       n1<- ((Fval <-1)*1)*n
       h1<- ((Fval <-1)*1)*h
-      output <- list(n=n1, h=h1, k=K)
+      output <- list(type=type, n=n1, h=h1, k=K)
     }
 if("R" %in% type)
 {
@@ -97,7 +97,7 @@ if("R" %in% type)
   L2<- ((Fval <-1)*1)*lu
   n1<- ((Fval <-1)*1)*n
   h1<- ((Fval <-1)*1)*h
-  output <- list( n=n1, h=h1, lp=L1, up=L2)
+  output <- list( type=type,n=n1, h=h1, lp=L1, up=L2)
 }
  if ("S" %in% type)
     {
@@ -139,7 +139,7 @@ if("R" %in% type)
    L2<-  ((Fval <-1)*1)*lu
    n1<- ((Fval <-1)*1)*n
    h1<- ((Fval <-1)*1)*h
-   output <- list(n=n1, h=h1, lp=L1, up=L2)
+   output <- list(type=type,n=n1, h=h1, lp=L1, up=L2)
    }
 if ("S2" %in% type)
   {
@@ -183,7 +183,7 @@ if ("S2" %in% type)
   L2<-  ((Fval <-1)*1)*lu
   n1<- ((Fval <-1)*1)*n
   h1<- ((Fval <-1)*1)*h
-  output <- list(n=n1, h=h1, lp=L1, up=L2)
+  output <- list(type=type,n=n1, h=h1, lp=L1, up=L2)
 }
   if ("Xbar-R" %in% type)
   {
@@ -232,7 +232,7 @@ if ("S2" %in% type)
     L2<-  ((Fval <-1)*1)*lu
     n1<- ((Fval <-1)*1)*n
     h1<- ((Fval <-1)*1)*h
-    output <- list(n=n1, h=h1, k=K, lp=L1, up=L2)
+    output <- list(type=type,n=n1, h=h1, k=K, lp=L1, up=L2)
   }
   if ("Xbar-S" %in% type)
   {
@@ -281,7 +281,7 @@ if ("S2" %in% type)
     L2<-  ((Fval <-1)*1)*lu
     n1<- ((Fval <-1)*1)*n
     h1<- ((Fval <-1)*1)*h
-    output <- list(n=n1, h=h1, k=K, lp=L1, up=L2)
+    output <- list(type=type,n=n1, h=h1, k=K, lp=L1, up=L2)
   }
   if ("Xbar-S2" %in% type)
   {
@@ -330,7 +330,7 @@ if ("S2" %in% type)
     L2<-  ((Fval <-1)*1)*lu
     n1<- ((Fval <-1)*1)*n
     h1<- ((Fval <-1)*1)*h
-    output <- list(n=n1, h=h1, k=K, lp=L1, up=L2)
+    output <- list(type=type,n=n1, h=h1, k=K, lp=L1, up=L2)
   }
   class(output) <- "odpbc"
   return (output)
