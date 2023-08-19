@@ -39,6 +39,7 @@ pbcc<- function(data,T1, p1, type=c("Xbar", "R", "S", "S2","Xbar-R","Xbar-S","Xb
   sizes <- as.numeric(ncol(data))
   alfa <- 1-exp(log(1-p1)/T1)
   alpha <- alfa
+  alpha1 <- 1-sqrt(1-alfa)
 if("Xbar" %in% type )
  {
 
@@ -100,9 +101,9 @@ if("R" %in% type )
     q1 <- qcc::qcc(data, type="S", plot=FALSE)
     std.dev <- q1$std.dev
     StatisticsS <- q1$statistics
-    lclS <- lp*q1$center/qcc.c4(sizes)
+    lclS <- (lp/sqrt(sizes-1))*q1$center/qcc.c4(sizes)
     clS <- q1$center
-    uclS <- up*q1$center/qcc.c4(sizes)
+    uclS <- (up/sqrt(sizes-1))*q1$center/qcc.c4(sizes)
     output <- list(data.name=data.name,type=type, sizes=sizes, std.dev=std.dev, statistics=StatisticsS, LCL=lclS, CL=clS, UCL=uclS)
   }
   if("S2" %in% type )
@@ -137,19 +138,19 @@ if("Xbar-R" %in% type )
   {
 
   if(missing(k))
-  {k <- stats::qnorm(1-alpha/2)}
+  {k <- stats::qnorm(1-alpha1/2)}
 
   if (sided=="one") {
 
     if(missing(lp))
     {lp <- 0}
     if(missing(up))
-    {up <- stats::qtukey(alpha, sizes, Inf, lower.tail=FALSE)}
+    {up <- stats::qtukey(alpha1, sizes, Inf, lower.tail=FALSE)}
     }else {
       if(missing(lp))
-      {lp <- stats::qtukey(alpha/2, sizes, Inf)}
+      {lp <- stats::qtukey(alpha1/2, sizes, Inf)}
       if(missing(up))
-      {up <- stats::qtukey(alpha/2, sizes, Inf, lower.tail=FALSE)}
+      {up <- stats::qtukey(alpha1/2, sizes, Inf, lower.tail=FALSE)}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)
     std.devx <- q1$std.dev
@@ -170,7 +171,7 @@ if("Xbar-R" %in% type )
   {
 
     if(missing(k))
-    {k <- stats::qnorm(1-alpha/2)}
+    {k <- stats::qnorm(1-alpha1/2)}
     qcc.c4 <- function(n)
     { sqrt(2/(n - 1)) * exp(lgamma(n/2) - lgamma((n - 1)/2)) }
     if (sided=="one"){
@@ -178,13 +179,13 @@ if("Xbar-R" %in% type )
       if(missing(lp))
       {lp <- 0}
       if(missing(up))
-      {up <- sqrt(stats::qchisq(1-alpha, sizes-1))}
+      {up <- sqrt(stats::qchisq(1-alpha1, sizes-1))}
 
     }else{
       if(missing(lp))
-      {lp <- sqrt(stats::qchisq(alpha/2, sizes-1))}
+      {lp <- sqrt(stats::qchisq(alpha1/2, sizes-1))}
       if(missing(up))
-      {up <- sqrt(stats::qchisq(1-alpha/2, sizes-1))}
+      {up <- sqrt(stats::qchisq(1-alpha1/2, sizes-1))}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)
     std.devx <- q1$std.dev
@@ -195,28 +196,28 @@ if("Xbar-R" %in% type )
     q2 <- qcc::qcc(data, type="S", plot=FALSE)
     std.devS <- q2$std.dev
     StatisticsS <- q2$statistics
-    lclS <- lp*q2$center/qcc.c4(sizes)
+    lclS <- (lp/sqrt(sizes-1))*q2$center/qcc.c4(sizes)
     clS <- q2$center
-    uclS <- up*q2$center/qcc.c4(sizes)
+    uclS <- (up/sqrt(sizes-1))*q2$center/qcc.c4(sizes)
     output <- list(data.name=data.name,type=type,sizes=sizes,std.dev=std.devx,statistics=Statisticsx,LCL=lclx, CL=clx, UCL=uclx, std.dev1=std.devS, statistics1=StatisticsS,LCL1=lclS, CL1=clS, UCL1=uclS)
   }
 
   if("Xbar-S2" %in% type )
   {
     if(missing(k))
-    {k <- stats::qnorm(1-alpha/2)}
+    {k <- stats::qnorm(1-alpha1/2)}
 
     if (sided=="one"){
       if(missing(lp))
       {lp <- 0}
       if(missing(up))
-      {up <- stats::qchisq(1-alpha, sizes-1)}
+      {up <- stats::qchisq(1-alpha1, sizes-1)}
 
     }else{
       if(missing(lp))
-      {lp <- stats::qchisq(alpha/2, sizes-1)}
+      {lp <- stats::qchisq(alpha1/2, sizes-1)}
       if(missing(up))
-      {up <- stats::qchisq(1-alpha, sizes-1)}
+      {up <- stats::qchisq(1-alpha1, sizes-1)}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)
     std.devx <- q1$std.dev
