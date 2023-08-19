@@ -11,7 +11,9 @@
 #-----------------------------------------------------------------------------#
 
 #' @export
-pbcc<- function(data,T1, p1, type=c("Xbar", "R", "S", "S2","Xbar-R","Xbar-S","Xbar-S2"), sided="two", k, lp, up)
+pbcc<- function(data,T1, p1, type=c("Xbar", "R", "S", "S2",
+                                    "Xbar-R","Xbar-S","Xbar-S2"), sided="two",
+                k=NULL, lp=NULL, up=NULL)
 {
   if (!requireNamespace("qcc", quietly = TRUE)) {
     stop(
@@ -23,17 +25,17 @@ pbcc<- function(data,T1, p1, type=c("Xbar", "R", "S", "S2","Xbar-R","Xbar-S","Xb
       call. = FALSE ) }
 
   call <- match.call()
-  if (missing(data))
+  if (is.null(data))
     stop("'data' argument is not specified")
   if(identical(type, eval(formals(pbcc)$type)))
   { type <- as.character(type)[1]
   warning("chart 'type' not specified, assuming \"", type, "\"",
           immediate. = TRUE) }
-  if(missing(p1))
+  if(is.null(p1))
   {p1 <- 0.05}
-  if(missing(T1))
+  if(is.null(T1))
   {T1 <- 100}
-  if(missing(sided))
+  if(is.null(sided))
   {sided <- "two"}
   data.name <- deparse(substitute(data))
   sizes <- as.numeric(ncol(data))
@@ -43,7 +45,7 @@ pbcc<- function(data,T1, p1, type=c("Xbar", "R", "S", "S2","Xbar-R","Xbar-S","Xb
 if("Xbar" %in% type )
  {
 
-  if(missing(k))
+  if(is.null(k))
   {
     k <- stats::qnorm(1-alpha/2)
   }
@@ -60,16 +62,16 @@ if("R" %in% type )
   {
 
   if (sided=="one"){
-    if(missing(lp))
+    if(is.null(lp))
     {lp <- 0}
-    if(missing(up))
+    if(is.null(up))
     {up <- stats::qtukey(alpha, sizes, Inf, lower.tail=FALSE)}
 
   }else{
 
-    if(missing(lp))
+    if(is.null(lp))
     {lp <- stats::qtukey(alpha/2, sizes, Inf)}
-    if(missing(up))
+    if(is.null(up))
     {up <- stats::qtukey(alpha/2, sizes, Inf, lower.tail=FALSE)}
 
   }
@@ -86,16 +88,16 @@ if("R" %in% type )
     qcc.c4 <- function(n)
     { sqrt(2/(n - 1)) * exp(lgamma(n/2) - lgamma((n - 1)/2)) }
     if (sided=="one"){
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- 0}
-     if(missing(up))
+     if(is.null(up))
       { up <- sqrt(stats::qchisq(1-alpha, sizes-1))}
 
     }else{
 
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- sqrt(stats::qchisq(alpha/2, sizes-1))}
-      if(missing(up))
+      if(is.null(up))
       { up <- sqrt(stats::qchisq(1-alpha/2, sizes-1))}
     }
     q1 <- qcc::qcc(data, type="S", plot=FALSE)
@@ -111,14 +113,14 @@ if("R" %in% type )
 
     if (sided=="one"){
 
-          if(missing(lp))
+          if(is.null(lp))
           {lp <- 0}
-          if(missing(up))
+          if(is.null(up))
           { up <- stats::qchisq(1-alpha, sizes-1)}
     }else{
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- stats::qchisq(alpha/2, sizes-1)}
-      if(missing(up))
+      if(is.null(up))
       { up <- stats::qchisq(1-alpha/2, sizes-1)}
     }
 
@@ -137,19 +139,19 @@ if("R" %in% type )
 if("Xbar-R" %in% type )
   {
 
-  if(missing(k))
+  if(is.null(k))
   {k <- stats::qnorm(1-alpha1/2)}
 
   if (sided=="one") {
 
-    if(missing(lp))
+    if(is.null(lp))
     {lp <- 0}
-    if(missing(up))
+    if(is.null(up))
     {up <- stats::qtukey(alpha1, sizes, Inf, lower.tail=FALSE)}
     }else {
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- stats::qtukey(alpha1/2, sizes, Inf)}
-      if(missing(up))
+      if(is.null(up))
       {up <- stats::qtukey(alpha1/2, sizes, Inf, lower.tail=FALSE)}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)
@@ -170,21 +172,21 @@ if("Xbar-R" %in% type )
   if("Xbar-S" %in% type )
   {
 
-    if(missing(k))
+    if(is.null(k))
     {k <- stats::qnorm(1-alpha1/2)}
     qcc.c4 <- function(n)
     { sqrt(2/(n - 1)) * exp(lgamma(n/2) - lgamma((n - 1)/2)) }
     if (sided=="one"){
 
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- 0}
-      if(missing(up))
+      if(is.null(up))
       {up <- sqrt(stats::qchisq(1-alpha1, sizes-1))}
 
     }else{
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- sqrt(stats::qchisq(alpha1/2, sizes-1))}
-      if(missing(up))
+      if(is.null(up))
       {up <- sqrt(stats::qchisq(1-alpha1/2, sizes-1))}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)
@@ -204,19 +206,19 @@ if("Xbar-R" %in% type )
 
   if("Xbar-S2" %in% type )
   {
-    if(missing(k))
+    if(is.null(k))
     {k <- stats::qnorm(1-alpha1/2)}
 
     if (sided=="one"){
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- 0}
-      if(missing(up))
+      if(is.null(up))
       {up <- stats::qchisq(1-alpha1, sizes-1)}
 
     }else{
-      if(missing(lp))
+      if(is.null(lp))
       {lp <- stats::qchisq(alpha1/2, sizes-1)}
-      if(missing(up))
+      if(is.null(up))
       {up <- stats::qchisq(1-alpha1, sizes-1)}
     }
     q1 <- qcc::qcc(data, type="xbar", plot=FALSE)

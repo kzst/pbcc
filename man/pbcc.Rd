@@ -1,12 +1,14 @@
-\name{pbcc-package}
-\alias{pbcc-package}
+\name{pbcc}
+\alias{pbcc}
 \alias{pbcc}
 \title{Percentile-based control charts
 }
 \description{Create an object of class \code{'pbcc'} to perform statistical quality control based on percentile-based designs (PL) approach. This object may then be used to plot percentile-based Shewhart charts either individual or joint, summary statistics and more with guaranted in-control performace.
 }
 \usage{
-pbcc(data,T1,p1,type=c("Xbar","R","S", "S2","Xbar-R","Xbar-S","Xbar-S2"),sided="two")
+pbcc(data,T1, p1, type=c("Xbar", "R", "S", "S2",
+  "Xbar-R","Xbar-S","Xbar-S2"), sided="two",
+  k=NULL, lp=NULL, up=NULL)
 }
 \arguments{
 \item{data}{ A data frame, a matrix or a vector containing observed data for
@@ -16,6 +18,9 @@ pbcc(data,T1,p1,type=c("Xbar","R","S", "S2","Xbar-R","Xbar-S","Xbar-S2"),sided="
 \item{p1}{The probability to signal in-control from a specified number (a numeric value, default value is 5\%)}
 \item{type}{ A character string specifying the type of Shewhart control chart either individual or joint.Available types are; "Xbar", "R", "S", "S2", "Xbar-R", "Xbar-S" and "Xbar-S2".}
 \item{sided}{A character string specifying the calculation of either one-sided or two-sided control limits of Shewhart dispersion charts based on PL approach (default type is two-sided).}
+\item{k}{The optimal control chart constant/multiplier to design the percentile-based X-bar control chart either individually or jointly.}
+\item{lp}{The optimal lower percentile point to calculate the lower control limits of the percentile-based dispersion control chart. or/and}
+\item{up}{The optimal upper percentile point to calculate the lower control limits of the percentile-based dispersion control chart.}
 }
 
 \value{ Returns an object of class \code{'pbcc'} with "data.name", "type" and values of "sizes", "std.dev", "statistics" and "control limits" of individual or joint Shewhart control chart.

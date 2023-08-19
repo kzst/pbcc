@@ -1,5 +1,5 @@
-\name{pbc}
-\alias{pbc}
+\name{pbcc-package}
+\alias{pbcc-package}
 \docType{package}
 
 \title{Package of Percentile-based Control Charts}
