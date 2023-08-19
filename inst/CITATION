@@ -5,8 +5,6 @@ bibentry(
     author       = c(    person("Aamir", "Saghir", email="aamirstat@yahoo.com", role = c("aut")),
     person("Zsolt T.", "Kosztyan", email="kosztyan.zsolt@gtk.uni-pannon.hu", role = c("aut", "cre"))
     ),
-    
-    author       = personList(person(given="Aamir", family="Saghir"), person(given="Zsolt T.", family="Kosztyan", email="kzst@gtk.uni-pannon.hu")),
     journal      = "Software Impacts",
     year         = 2023,
     pages        = "100455",
