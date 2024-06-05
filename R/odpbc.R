@@ -1,13 +1,13 @@
 #-----------------------------------------------------------------------------#
 #                                                                             #
-#         PERCENTILE-BASED CONTROL CHARTS                                     #
+#  PERCENTILE-BASED CONTROL CHARTS                                            #
 #                                                                             #
 #  Written by: Aamir Saghir, Zsolt T. Kosztyan                                #
 #              Department of Quantitative Methods                             #
 #              University of Pannonia, Hungary                                #
-#              kzst@gtk.uni-pannon.hu.                                        #
+#              kosztyan.zsolt@gtk.uni-pannon.hu                               #
 #                                                                             #
-# Last modified: June 2024                                                 #
+# Last modified: June 2024                                                    #
 #-----------------------------------------------------------------------------#
 
 #' @export
