@@ -7,7 +7,7 @@
 #              University of Pannonia, Hungary                                #
 #              kzst@gtk.uni-pannon.hu                                         #
 #                                                                             #
-# Last modified: October 2022                                                 #
+# Last modified: June 2024                                                 #
 #-----------------------------------------------------------------------------#
 
 #' @export
@@ -27,7 +27,7 @@ plot.pbcc <- function(x, title,...){
       "Package \"grDevices\" must be installed to use this function.",
       call. = FALSE ) }
 
-  if ("pbcc" %in% class(x)){
+  if (methods::is(x,"pbcc")){
     Q <- x
     data.name <-  Q$data.name
     type <- Q$type

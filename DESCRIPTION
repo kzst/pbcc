@@ -1,7 +1,7 @@
 Package: pbcc
 Type: Package
 Title: Percentile-Based Control Chart
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
     person("Aamir", "Saghir", role = "aut"),
     person("Zsolt T.","Kosztyan",email="kosztyan.zsolt@gtk.uni-pannon.hu", role = c("aut", "cre"))
@@ -14,7 +14,7 @@ LazyData: true
 URL: https://github.com/kzst/pbcc
 Depends: 
     R (>= 3.10)
-Imports:  rgenoud, ggplot2, stats, qcc, grDevices, ggpubr
+Imports:  rgenoud, ggplot2, stats, qcc, grDevices, ggpubr, methods
 Collate:
     'odpbc.R'
     'pbcc.R'

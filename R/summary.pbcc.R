@@ -7,13 +7,13 @@
 #              University of Pannonia, Hungary                                #
 #              kzst@gtk.uni-pannon.hu                                         #
 #                                                                             #
-# Last modified: October 2022                                                 #
+# Last modified: June 2024                                                 #
 #-----------------------------------------------------------------------------#
 
 #' @export
 summary.pbcc <- function(object, digits =  getOption("digits"),...) {
 
-  if ("pbcc" %in% class(object)){
+  if (methods::is(object,"pbcc")){
 
     data.name <- object$data.name
     type <- object$type
@@ -128,7 +128,7 @@ summary.pbcc <- function(object, digits =  getOption("digits"),...) {
 #' @export
 summary.odpbc <- function(object, digits =  getOption("digits"),...) {
 
-  if ("odpbc" %in% class(object)){
+  if (methods::is(object,"odpbc")){
 
     k <- object$k
     n <- object$n
