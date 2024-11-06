@@ -74,7 +74,7 @@ Q1<- odpbc(nmax, T1, T2, hv, mat, p1, p2, d, delta=1.5, type= "Xbar")
 delta=2   # Set the shift size in the process dispersion is 2 (moderate shift).
 Q2<- odpbc(nmax, T1, T2, hv, mat, p1, p2, d=1.0, delta, type= "S2", sided="one")
 
-#Optimal parameters of two-sided percentile-based joint Xbar& S control chart.
+# Optimal parameters of two-sided percentile-based joint Xbar& S control chart.
 d=1.0     # Set the shift size in the process mean is 1 (small shift).
 delta=2   # Set the shift size in the process dispersion is 2 (moderate shift).
 Q3<- odpbc(nmax, T1, T2, hv, mat, p1, p2, d, delta, type= "Xbar-S")

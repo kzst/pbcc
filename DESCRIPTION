@@ -1,7 +1,7 @@
 Package: pbcc
 Type: Package
 Title: Percentile-Based Control Chart
-Version: 0.0.6
+Version: 0.0.7
 Authors@R: c(
     person("Khan", "Zahid", role = "aut"),
     person("Aamir", "Saghir", role = "aut"),
